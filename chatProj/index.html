@@ -1,0 +1,107 @@
+
+<html>
+
+  <head>
+  
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
+
+
+  </head>
+
+
+  <body>
+
+  <div id="cabecera">
+  	<h1 id="textoCabecera">WELCOME TO OUR CHAT</h1>
+  </div>
+
+
+  <div id="initial_page">
+  	
+  	Room:<input type = "text" class="form-control" id= "roomName" placeholder="Elige un canal"/>
+  	Username:<input type = "text" class="form-control" id= "usarname" placeholder="Elige un nombre"/>
+  	<button id="submitButton" type="submit" class="btn btn-primary">ACCEDER</button></p> 
+
+  	<p class="icons">
+  	  <button id="img1"><img src="img/spy.png" width="100px" height="100px" ></button>
+      <button id="img2"><img src="img/Astronaut.png" width="100px" height="100px" ></button>
+      <button id="img3"><img src="img/mickey.png" width="100px" height="100px" ></button>
+    </p>
+
+    <h12>choose any avatar</h12>
+
+  </div>
+
+
+
+<div id="main" style="display:none;"  >
+  	
+  <div class='container' ng-cloak ng-app="chatApp">
+
+        <div class='chatbox' ng-controller="MessageCtrl as chatMessage">
+          
+          <div class='chatbox__user-list'>
+            
+            <h1>Usuarios</h1>
+            <div class='chatbox__user--active' style="display: none;">
+            <p></p>
+            </div>
+
+          </div>
+
+          <div class="chatbox__messages" ng-repeat="message in messages">
+            <div class="chatbox__messages__user-message" id= "messages">
+            <div class="chatbox__messages__user-message--ind-message" id= "chatDiv">
+      		    <img src="img/aviso.png" class = "avatar" width="40px" height="40px" >
+
+                <span class="boxname" > Chat: </span>
+           
+                <span class="boxmessage" > NEW SESSION </span>
+      		 
+              </div>
+            </div>
+          </div>
+         </div>
+
+       
+       <div>
+          <input type="text" data-emojiable="true"  placeholder="Type Message" id= "msg"/> 
+          <button  id="sendButton">Send</button>
+       </div>
+
+      <div class= "divCanvas" > 
+            
+        <h2 id= "chatRoom">  </h2> 
+
+        <input type = "text" id= "roomId" class="form-control" placeholder="Elige una sala "/> <br>
+        <button id= "changeRoom" type="submit" class="btn btn-primary">Change</button></p>
+
+
+        <canvas id="myCanvas" width="400" height="300" style="border:1px solid #b07a94; background: White"></canvas> <br> 
+
+
+        <input class= "btn btn-primary btn-sm" type="button" value="clear" id="clear"/> 
+        <div class="btn-group">
+            <button class = "red"></button>
+            <button class = "green"></button>
+            <button class = "blue"></button>
+            <button class = "black"></button>
+        </div>
+           
+      </div>
+
+  </div>	
+
+</div>
+  
+
+  <script src="js/sillyclient.js" type="text/javascript"></script>
+  <script src="js/code.js" type="text/javascript"></script>
+  <script src="js/canvas.js" type="text/javascript"></script>
+   <script src="js/server.js" type="text/javascript"></script>
+
+  </body>
+</html>
